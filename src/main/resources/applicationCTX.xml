@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bmiCalculator" class="com.javalec.ex.BMICalculator">
+		<property name="lowWeight">
+			<value>18.5</value>
+		</property>
+		<property name="normal">
+			<value>23</value>
+		</property>
+		<property name="overweight">
+			<value>25</value>
+		</property>
+		<property name="obesity">
+			<value>30</value>
+		</property>
+	</bean>
+	
+	<bean id ="myInfo" class="com.javalec.ex.MyInfo">
+		<property name="name" value="류뜽구"/> <!-- 밸류값 이렇게도 가능 -->
+		<property name="height" value="184.5"/>
+		<property name="weight">
+			<value>78.2</value>
+		</property>
+		<property name="hobbies">
+			<list>
+				<value>피파18</value>
+				<value>유튜브</value>
+				<value>웨이트 트레이닝</value>
+			</list>
+		</property>
+		<property name="bmiCalculator">
+			<ref bean="bmiCalculator" />
+		</property>
+	</bean>
+</beans>
